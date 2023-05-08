@@ -64,7 +64,6 @@ fs.readdir(`${src}/components`, (err, files) => {
         htmlTemp = data
     })
     readTemplate.on('end',()=>{
-        console.log(comps)
         for (let i in compNames){
             htmlTemp = htmlTemp.replace(`{{${compNames[i]}}}`,comps[i])
         }
