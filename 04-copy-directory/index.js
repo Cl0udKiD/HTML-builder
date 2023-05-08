@@ -17,6 +17,19 @@ function copyDir(src,dest){
                         })
                     })
                 });
+            }else{
+                fs.readdir(dest,(err,files)=>{
+                    files.forEach(file=>{
+                        fs.unlink(`${dest}/${file}`,(err)=>{
+                            if(err) console.log(err)
+                        })
+                    })
+                })
+                files.forEach(file => {
+                    fs.copyFile(`${src}/${file}`,`${dest}/${file}`,(err)=>{
+                        if(err)console.log(err)
+                    })
+                })
             }
         })
     });
