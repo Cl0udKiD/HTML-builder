@@ -21,3 +21,5 @@ function copyDir(src,dest){
         })
     });
 }
+
+copyDir(src, dest)
